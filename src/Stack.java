@@ -41,145 +41,54 @@ public class Stack<E, T> {
 
 
         if(length==1){//if second value to be added, directly interacts with the root.
-
-
             n2.setNext(root);
-
-
             root.setPrev(n2);
-
-
         }
 
 
         if(length>1){//if more than second value to be added, uses recursive method.
-
-
             n2.setNext(topNode(root));
-
-
             topNode(root).setPrev(n2);
 
-
-
-
-
-
-
         }
-
-
         length++;
 
-
     }
-
-
-
-
-
-
-
-
-
-
-
 
     public T peek(){
-
-
         return (T) topNode(root).getValue();//return the value of the top node in the stack casted to a T type
 
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public int size(){//returns the length counter that is in the class instance data.
-
-
         return length;
-
 
     }
 
 
-
-
-
-
-
     public boolean isEmpty(){
-
-
         if(length==0&&root.getValue()==null){//checks if it only has the root node and if the root node is null or if it has a value.
-
-
             return true;
 
-
         }
-
-
         return false;
-
 
     }
 
 
     public T pop(){
-
-
         if (length==0){
-
-
             return null;
 
-
         }
-
-
         node temp = topNode(root);
-
-
         node temp2 = topNode(root).getNext();//gets a temp node at the second to top position (will be top when the method finishes)
-
-
         temp2.setPrev(null);
-
-
         length--;
-
-
         return (T) temp.getValue();//return the value of the top node in the stack casted to a T type
 
-
-
-
-
-
-
     }
-
-
-
-
-
-
 
 }
 
