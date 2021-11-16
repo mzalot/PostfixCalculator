@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62f52bd1-b891-4c0d-b279-3ecfad76df59" name="Default Changelist" comment="" />
+    <list default="true" id="62f52bd1-b891-4c0d-b279-3ecfad76df59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/PostfixCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostfixCalculator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
