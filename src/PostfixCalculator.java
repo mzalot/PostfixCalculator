@@ -7,4 +7,13 @@
  * Date: 11/16/21
  **/
 public class PostfixCalculator {
+    //instance data
+    Stack s;
+    String input;
+
+    //default constructor
+    public PostfixCalculator(String input){
+        s = new Stack();
+        this.input = input;
+    }
 }
