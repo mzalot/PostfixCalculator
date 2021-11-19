@@ -11,11 +11,20 @@ public class PostfixCalculator {
     //instance data
     Stack s;
     String input;
+    int counter;
 
     //default constructor
+
     public PostfixCalculator(String input){
         s = new Stack();
         this.input = input;
     }
+
+
+    public void setInput(String Input){
+        input=Input;
+    }
+    
+
 
 }
