@@ -24,7 +24,16 @@ public class PostfixCalculator {
     public void setInput(String Input){
         input=Input;
     }
-    
+    public void toStack(){
+        String str = input;
+        Stack ret = new Stack();
+        for (int i=str.length()-1;i>=0;i=i-2){
+            System.out.print(str.charAt(i));
+            ret.push(str.charAt(i));
+        }
+        System.out.println();
+        s=ret;
+    }
 
 
 }
