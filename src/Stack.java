@@ -82,12 +82,22 @@ public class Stack<E, T> {
             return null;
 
         }
+        if (length==1){
+            node f = new node((T)root.getValue(),null,null);
+            root.setDataType(null);
+            root.setPrev(null);
+            return (T) f.getValue();
+
+        }
         node temp = topNode(root);
         node temp2 = topNode(root).getNext();//gets a temp node at the second to top position (will be top when the method finishes)
         temp2.setPrev(null);
         length--;
         return (T) temp.getValue();//return the value of the top node in the stack casted to a T type
 
+    }
+    public int getLength(){
+        return length;
     }
 
 }
