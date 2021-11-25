@@ -1,6 +1,6 @@
 /**
- * PrefixCalculator
- * Makes a prefix calculator
+ * PostfixCalculator
+ * Makes a postfix calculator
  * Author: August Penny and Mareks Zeile
  * Collaborator(s):
  * Collaboration:
@@ -34,6 +34,34 @@ public class PostfixCalculator {
         }
         System.out.println();
         s=ret;
+    }
+
+    public int evaluate(){
+        //go through the whole string of the string
+        for(int i = 0; i < input.length()-1; i++){
+            if(input.charAt(i) == '+' || input.charAt(i) == '-' || input.charAt(i) == '/' || input.charAt(i) == '*'){
+                int value1 = (int)s.pop();
+                int value2 = (int)s.pop();
+                if(input.charAt(i) == '+'){
+                    s.push(value2 + value1);
+                }if(input.charAt(i) == '-'){
+                    s.push(value2 - value1);
+                }if(input.charAt(i) == '/'){
+                    s.push(value2 / value1);
+                }if(input.charAt(i) == '*'){
+                    s.push(value2 * value1);
+                }
+
+            }else if(input.charAt(i) != ' '){
+                String stringPush = input.substring(i,i+1);
+                while(input.charAt(i+1) != ' '){
+                    i++;
+                    stringPush += input.substring(i,i+1);
+                }
+                s.push(stringPush);
+            }
+        }
+        return (int)s.pop();
     }
 
 
