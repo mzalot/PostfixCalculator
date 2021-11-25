@@ -13,8 +13,7 @@ public class PostfixCalculator {
     String input;
     int counter;
 
-    //default constructor
-
+    //constructor
     public PostfixCalculator(String input){
         s = new Stack();
         this.input = input;
@@ -36,9 +35,9 @@ public class PostfixCalculator {
         s=ret;
     }
 
-    public int evaluate(){
+    public Integer evaluate(){
         //go through the whole string of the string
-        for(int i = 0; i < input.length()-1; i++){
+        for(int i = 0; i < input.length(); i++){
             if(input.charAt(i) == '+' || input.charAt(i) == '-' || input.charAt(i) == '/' || input.charAt(i) == '*'){
                 int value1 = (int)s.pop();
                 int value2 = (int)s.pop();
@@ -53,15 +52,16 @@ public class PostfixCalculator {
                 }
 
             }else if(input.charAt(i) != ' '){
-                String stringPush = input.substring(i,i+1);
+                int intPush = ((int)input.charAt(i))-48;
                 while(input.charAt(i+1) != ' '){
                     i++;
-                    stringPush += input.substring(i,i+1);
+                    intPush *= 10;
+                    intPush += ((int)input.charAt(i))-48;
                 }
-                s.push(stringPush);
+                s.push(intPush);
             }
         }
-        return (int)s.pop();
+        return (Integer)s.pop();
     }
 
 
