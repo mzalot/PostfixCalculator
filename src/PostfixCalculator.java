@@ -14,6 +14,9 @@ public class PostfixCalculator {
     int counter;
 
     //constructor
+    public PostfixCalculator(){
+        s=new Stack();
+    }
     public PostfixCalculator(String input){
         s = new Stack();
         this.input = input;
